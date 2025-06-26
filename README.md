@@ -9,7 +9,7 @@ Your pluigin musst have a
 ```
 index.json
 ```
-file in the root directory
+file in the root directory *(as well as the standard `pluigin.ini` and lua files)*
 
 **The Content of this file looks like this:**
 
