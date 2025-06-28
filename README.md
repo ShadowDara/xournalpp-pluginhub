@@ -50,3 +50,7 @@ How to registrate a pluigin?
 ```
 
 4. add the link
+
+---
+
+See here [github.com/xournalpp/xournalpp/issues/3839](https://github.com/xournalpp/xournalpp/issues/3839)
