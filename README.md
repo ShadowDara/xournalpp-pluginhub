@@ -75,3 +75,9 @@ How to registrate a pluigin?
 ---
 
 See here [github.com/xournalpp/xournalpp/issues/3839](https://github.com/xournalpp/xournalpp/issues/3839)
+
+
+## License
+
+the license is MIT except for the directories where another license is located,
+this license applies of course although for the subdirectories of directory.
