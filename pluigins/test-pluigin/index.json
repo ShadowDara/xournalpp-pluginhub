@@ -1,4 +1,8 @@
 {
+    "name": "Xournalpp-test-pluigin",
+    "namespace": "test-pluigin",
+    "author": "Shadowdara",
+    "description": "a test for my xournalpp Pluigin Hub",
     "available_for": [
         "1.2.7",
         "1.2.6"

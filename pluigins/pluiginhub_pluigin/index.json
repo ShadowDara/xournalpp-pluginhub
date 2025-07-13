@@ -1,0 +1,11 @@
+{
+    "name": "Xournalpp Pluiginhub Pluigin",
+    "namespace": "pluiginhub_pluigin",
+    "author": "Shadowdara",
+    "description": "a pluigin for the Xournalpp Pluigin Hub",
+    "available_for": [
+        "1.2.7",
+        "1.2.6"
+    ],
+    "other_versions": []
+}

@@ -29,6 +29,10 @@ file in the root directory *(as well as the standard `pluigin.ini` and lua files
 
 ```json
 {
+    "name": "",
+    "namespace": "",
+    "author": "",
+    "description": "",
     "available_for": [
         "1.2.7"
     ],
@@ -37,11 +41,14 @@ file in the root directory *(as well as the standard `pluigin.ini` and lua files
             "available_for": [
                 "1.2.6"
             ],
-            "link": "soruce code link"
+            "link": "source code link"
         }
     ]
 }
 ```
+
+**namespace** MUSST be same as your json file in `pluigin-resgistration`,
+else it does not work!
 
 You can of course add multiple **other versions** and multiple versions
 to **available_for**
