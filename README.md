@@ -5,8 +5,17 @@ This is an Idea for the Pluigin Hub Repository for Xournal++
 
 ## Directories
 
-pluigin-registration are for the github repo site
+```
+pluigin-data-pull
+-> a python script which collects the pluigin data to make it faster readable
+   for a client software
 
+pluigin-registration
+-> to registrate new pluigins
+
+pluigins
+-> to store code for xournalpp pluigins
+```
 
 ## Pluigin Structure
 
