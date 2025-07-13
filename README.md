@@ -3,6 +3,11 @@
 This is an Idea for the Pluigin Hub Repository for Xournal++
 
 
+## Directories
+
+pluigin-registration are for the github repo site
+
+
 ## Pluigin Structure
 
 Your pluigin musst have a 
