@@ -27,7 +27,7 @@ file in the root directory *(as well as the standard `pluigin.ini` and lua files
 
 **The Content of this file looks like this:**
 
-[example](example.json)
+[example](example/example.json)
 
 **namespace** MUSST be same as your json file in `pluigin-resgistration`,
 else it does not work!
@@ -46,7 +46,7 @@ How to registrate a pluigin?
 
 3. create a new json file the name of your pluigin and paste this:
 
-[example_registration](example_registration.json)
+[example_registration](example/example_registration.json)
 
 4. add the link
 
