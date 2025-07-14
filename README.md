@@ -33,6 +33,7 @@ file in the root directory *(as well as the standard `pluigin.ini` and lua files
     "namespace": "",
     "author": "",
     "description": "",
+    "license": "MIT",
     "available_for": [
         "1.2.7"
     ],

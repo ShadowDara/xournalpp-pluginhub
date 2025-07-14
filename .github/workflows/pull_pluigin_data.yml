@@ -25,4 +25,4 @@ jobs:
           pip install -r requirements.txt  # Falls du ein requirements.txt hast
 
       - name: Run script
-        run: python pluigin-data-pull/main.py
+        run: python pluigin-data-pull/pull-data.py

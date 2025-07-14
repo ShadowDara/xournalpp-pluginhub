@@ -2,6 +2,7 @@
     "name": "Xournalpp-test-pluigin",
     "namespace": "test-pluigin",
     "author": "Shadowdara",
+    "license": "MIT",
     "description": "a test for my xournalpp Pluigin Hub",
     "available_for": [
         "1.2.7",

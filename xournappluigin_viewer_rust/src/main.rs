@@ -1,35 +1,28 @@
+use reqwest::blocking::Client;
 use serde_json::Value;
 
 fn main() {
     match check_json() {
-        Ok(_) => println!("Alles ok"),
+        Ok(json) => println!("Alles ok : {}", json),
         Err(e) => eprintln!("Fehler: {}", e),
     }
+
+    // then need to parse the json file
 }
 
-fn check_json() -> Result<(), Box<dyn std::error::Error>> {
-    // file where the pluigin data is stored
+fn check_json() -> Result<Value, Box<dyn std::error::Error>> {
+    // Datei, wo die Plugin-Daten liegen
     let url = "https://raw.githubusercontent.com/ShadowDara/xournalpp-pluigin-hub-idea/refs/heads/main/pluigins.json";
 
-    let client = reqwest::blocking::Client::new();
+    let client = Client::new();
     let response = client
         .get(url)
         .header("User-Agent", "RustClient/1.0")
         .send()?;
 
-    let text = response.text()?;
-    
-    let json_result: serde_json::Result<Value> = serde_json::from_str(&text);
+    let text = response.text()?; // ✅ hier: ? entpackt das Result<String, _>
 
-    match json_result {
-        Ok(json) => {
-            println!("Gültiges JSON empfangen!");
-            println!("{json}")
-        },
-        Err(e) => {
-            println!("Ungültiges JSON: {}", e);
-        }
-    }
+    let json: Value = serde_json::from_str(&text)?; // ✅ entpackt Result<Value, _>
 
-    Ok(())
+    Ok(json)
 }
