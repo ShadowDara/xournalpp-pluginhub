@@ -3,6 +3,17 @@
 This is an Idea for the Pluigin Hub Repository for Xournal++
 
 
+## TODO
+
+- [] Branch Protection rules for PRs
+- [] PR Templates
+- [] update and make the Readme
+- [] make the python script to merge the json
+- [] make the client software to read the json
+
+**Anyone who want to help is welcome!**
+
+
 ## Directories
 
 ```
