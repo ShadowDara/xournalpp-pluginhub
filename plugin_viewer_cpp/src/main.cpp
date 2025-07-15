@@ -4,10 +4,6 @@
 
 static void on_button_clicked(GtkButton *button, gpointer user_data) {
     g_print("Button wurde geklickt!\n");
-
-    // Beispiel: Inhalt von example.com fetchen
-    std::string html = fetch_url("https://raw.githubusercontent.com/ShadowDara/xournalpp-plugin-hub-idea/refs/heads/main/plugins.json");
-    std::cout << "Website-Inhalt:\n" << html << std::endl;
 }
 
 static void on_activate(GtkApplication* app, gpointer user_data) {
@@ -34,9 +30,18 @@ static void on_activate(GtkApplication* app, gpointer user_data) {
 }
 
 int main(int argc, char **argv) {
+    fetch_and_parse();
+
     GtkApplication *app = gtk_application_new("org.example.gtk3", G_APPLICATION_FLAGS_NONE);
     g_signal_connect(app, "activate", G_CALLBACK(on_activate), NULL);
     int status = g_application_run(G_APPLICATION(app), argc, argv);
     g_object_unref(app);
     return status;
+}
+
+void fetch_and_parse() {
+    // Fetch Data from Github
+    std::string html = fetch_url("https://raw.githubusercontent.com/ShadowDara/xournalpp-plugin-hub-idea/refs/heads/main/plugins.json");
+
+    std::cout << "Website-Inhalt:\n" << html << std::endl;
 }

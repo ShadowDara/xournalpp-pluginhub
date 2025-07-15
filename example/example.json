@@ -4,11 +4,13 @@
     "author": "Shadowdara",
     "description": "a useless plugin",
     "license": "MIT",
+    "version": "1.0.1",
     "available_for": [
         "1.2.7"
     ],
     "other_versions": [
         {
+            "version": "1.0.0",
             "available_for": [
                 "1.2.6"
             ],

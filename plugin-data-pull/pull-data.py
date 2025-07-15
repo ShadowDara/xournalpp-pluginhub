@@ -2,6 +2,7 @@ import os
 import json
 from pathlib import Path
 from dataclasses import dataclass
+from typing import List, Optional
 
 
 # *************************************************
@@ -25,9 +26,28 @@ from dataclasses import dataclass
 # *                                               *
 # *************************************************
 
+# Dataclass for the registration file
 @dataclass
 class registration_file:
     main_link: str
+
+# Dataclasses for the Indexfile structure
+@dataclass
+class OtherVersion:
+    version: str
+    available_for: List[str]
+    link: str
+
+@dataclass
+class IndexFile:
+    name: str
+    namespace: str
+    author: str
+    description: str
+    license: str
+    version: str
+    available_for: List[str]
+    other_versions: Optional[List[OtherVersion]] = None
 
 
 # *************************************************

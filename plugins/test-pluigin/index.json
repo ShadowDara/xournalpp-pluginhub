@@ -4,6 +4,7 @@
     "author": "Shadowdara",
     "license": "MIT",
     "description": "a test for my xournalpp Plugin Hub",
+    "version": "1.0.0",
     "available_for": [
         "1.2.7",
         "1.2.6"
