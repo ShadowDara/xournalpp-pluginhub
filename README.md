@@ -10,6 +10,8 @@ This is an Idea for the Plugin Hub Repository for Xournal++
 - [ ] update and make the Readme
 - [ ] make the python script to merge the json
 - [ ] make the client software to read the json
+- [ ] write an good instruction how to add a pluigin
+- [ ] make ISSUE Templates
 
 **Anyone who want to help is welcome!**
 
