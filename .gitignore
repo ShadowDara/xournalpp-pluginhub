@@ -1,9 +1,6 @@
 # a Portable Version of Xournalpp to test the pluigin
 xournalpp-portable
 
-# Rust project
-xournappluigin_viewer_rust/target
-
 # Python
 __pycache__
 *.pyc
