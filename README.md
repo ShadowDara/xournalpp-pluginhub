@@ -1,6 +1,6 @@
-# Inofficial Xournalpp Pluigin Hub
+# Inofficial Xournalpp Plugin Hub
 
-This is an Idea for the Pluigin Hub Repository for Xournal++
+This is an Idea for the Plugin Hub Repository for Xournal++
 
 
 ## TODO
@@ -17,49 +17,51 @@ This is an Idea for the Pluigin Hub Repository for Xournal++
 ## Directories
 
 ```
-pluigin-data-pull
--> a python script which collects the pluigin data to make it faster readable
+plugin-data-pull
+-> a python script which collects the plugin data to make it faster readable
    for a client software
 
-pluigin-registration
--> to registrate new pluigins
+plugin-registration
+-> to registrate new plugins
 
-pluigins
--> to store code for xournalpp pluigins
+plugins
+-> to store code for xournalpp plugins
 ```
-
-## Pluigin Structure
-
-Your pluigin musst have a 
-```
-index.json
-```
-file in the root directory *(as well as the standard `pluigin.ini` and lua files)*
-
-**The Content of this file looks like this:**
-
-[example](example/example.json)
-
-**namespace** MUSST be same as your json file in `pluigin-resgistration`,
-else it does not work!
-
-You can of course add multiple **other versions** and multiple versions
-to **available_for**
 
 
 ## Registration
 
-How to registrate a pluigin?
+How to registrate a plugin?
 
 1. Your pluigin must have the files mentioned above
 
-2. open the `pluigin-registration` folder
+2. open the `plugin-registration` folder
 
 3. create a new json file the name of your pluigin and paste this:
 
 [example_registration](example/example_registration.json)
 
 4. add the link
+
+
+## Plugin Structure
+
+Your plugin musst have a 
+```
+index.json
+```
+file in the root directory *(as well as the standard `plugin.ini` and lua files)*
+
+**The Content of this file looks like this:**
+
+[example](example/example.json)
+
+**namespace** MUSST be same as your json file in `plugin-resgistration`,
+else it does not work!
+
+You can of course add multiple **other versions** and multiple versions
+to **available_for**
+
 
 ---
 

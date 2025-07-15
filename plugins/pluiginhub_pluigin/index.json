@@ -1,9 +1,9 @@
 {
-    "name": "Xournalpp-test-pluigin",
-    "namespace": "test-pluigin",
+    "name": "Xournalpp Pluginhub Plugin",
+    "namespace": "pluginhub_plugin",
     "author": "Shadowdara",
     "license": "MIT",
-    "description": "a test for my xournalpp Pluigin Hub",
+    "description": "a plugin for the Xournalpp Plugin Hub",
     "available_for": [
         "1.2.7",
         "1.2.6"

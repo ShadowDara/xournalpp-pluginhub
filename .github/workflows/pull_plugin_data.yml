@@ -23,9 +23,9 @@ jobs:
 
       - name: Install dependencies
         run: |
-          cd pluigin-data-pull
+          cd plugin-data-pull
           python -m pip install --upgrade pip
           pip install -r requirements.txt  # Falls du ein requirements.txt hast
 
       - name: Run script
-        run: python pluigin-data-pull/pull-data.py
+        run: python plugin-data-pull/pull-data.py

@@ -1,10 +1,10 @@
 -- @Author Shadowdara
--- Example Pluigin for the Pluigin Hub
+-- Example Plugin for the Plugin Hub
 -- Does absolutly nothing
 
 function initUi()
   ref = app.registerUi({
-    ["menu"] = "Pluigin Hub Example Pluigin",
+    ["menu"] = "Plugin Hub Example Plugin",
     ["callback"] = "popupmenu",
     ["accelerator"] = ""
   });
@@ -12,9 +12,9 @@ end
 
 function popupmenu()
   result = app.msgbox(
-    "Pluigin Hub Example Pluigin",
+    "Plugin Hub Example Plugin",
     {
-      [1] = "Pluigin Worked!",
+      [1] = "Plugin Worked!",
     }
   );
 end

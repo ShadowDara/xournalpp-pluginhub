@@ -1,0 +1,12 @@
+{
+    "name": "Xournalpp-test-plugin",
+    "namespace": "test-plugin",
+    "author": "Shadowdara",
+    "license": "MIT",
+    "description": "a test for my xournalpp Plugin Hub",
+    "available_for": [
+        "1.2.7",
+        "1.2.6"
+    ],
+    "other_versions": []
+}

@@ -1,5 +1,5 @@
 [package]
-name = "xournappluigin_viewer_rust"
+name = "xournapplugin_viewer_rust"
 version = "0.1.0"
 edition = "2024"
 

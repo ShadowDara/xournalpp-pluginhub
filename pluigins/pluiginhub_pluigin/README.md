@@ -1,3 +1,0 @@
-# Pluiginhub Pluigin
-
-*soon*

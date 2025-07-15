@@ -1,8 +1,8 @@
 {
-    "name": "noname_pluigin",
+    "name": "noname_plugin",
     "namespace": "noname",
     "author": "Shadowdara",
-    "description": "a useless pluigin",
+    "description": "a useless plugin",
     "license": "MIT",
     "available_for": [
         "1.2.7"

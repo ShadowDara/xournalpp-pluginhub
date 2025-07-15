@@ -3,7 +3,7 @@
 -- Register all Toolbar actions and intialize all UI stuff
 function initUi()
   ref = app.registerUi({
-    ["menu"] = "Open Pluigin Istaller",
+    ["menu"] = "Open Plugin Installer",
     ["callback"] = "openMenu",
     ["accelerator"] = "<Control>t"
   });
@@ -12,7 +12,7 @@ end
 -- Callback Menu for the pluigin installer
 function openMenu()
   result = app.msgbox(
-    "Inofficial Xournalpp Pluigin Installer",
+    "Inofficial Xournalpp Plugin Installer",
     {
       [1] = "Yes",
       [2] = "No"

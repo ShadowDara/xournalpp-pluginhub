@@ -16,7 +16,7 @@ from dataclasses import dataclass
 # 4. index datei auslesen und sublinks abarbeiten
 # 5. das alles in ein json file speichern
 
-# safe datei: pluigins.json
+# safe datei: plugins.json
 
 
 # *************************************************
@@ -36,12 +36,12 @@ class registration_file:
 # *                                               *
 # *************************************************
 
-pluigindatasafefile = "pluigins.json"
-pluigindatafolder = "pluigin-registration"
+plugindatasafefile = "plugins.json"
+plugindatafolder = "plugin-registration"
 
 script_path = os.path.dirname(__file__)
 base_path = Path(__file__).parent.parent
-json_path = os.path.join(base_path, pluigindatafolder)
+json_path = os.path.join(base_path, plugindatafolder)
 
 all_files = [os.path.join(json_path, f) for f in os.listdir(json_path)]
 

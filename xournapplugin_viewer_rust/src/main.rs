@@ -12,7 +12,7 @@ fn main() {
 
 fn check_json() -> Result<Value, Box<dyn std::error::Error>> {
     // Datei, wo die Plugin-Daten liegen
-    let url = "https://raw.githubusercontent.com/ShadowDara/xournalpp-pluigin-hub-idea/refs/heads/main/pluigins.json";
+    let url = "https://raw.githubusercontent.com/ShadowDara/xournalpp-plugin-hub-idea/refs/heads/main/plugins.json";
 
     let client = Client::new();
     let response = client

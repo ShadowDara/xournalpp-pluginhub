@@ -1,4 +1,4 @@
-# Pluigin Hub Viewer
+# Plugin Hub Viewer
 
 ```sh
 cargo b --release
