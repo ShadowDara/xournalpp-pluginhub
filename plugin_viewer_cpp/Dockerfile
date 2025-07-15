@@ -12,6 +12,7 @@ RUN dnf -y update && \
         pkgconf-pkg-config \
         glibc-devel \
         libstdc++-devel \
+        libcurl-devel \
         git \
         which && \
     dnf clean all
