@@ -5,3 +5,6 @@
 # JSON
 *.json linguist-detectable=true
 *.json linguist-documentation=false
+
+webpage/*json linguist-ignore
+webpage/*json linguist-vendored
