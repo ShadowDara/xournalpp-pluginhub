@@ -1,0 +1,26 @@
+---
+import { getPlugins } from "../../components/in_plugins.js";
+
+import Layout from "../../layouts/Layout.astro";
+
+import { AstroError } from 'astro/errors';
+
+export async function getStaticPaths() {
+  const plugins = await getPlugins();
+  return plugins.map(plugin => ({
+    params: { slug: plugin.namespace },
+  }));
+}
+
+const { slug } = Astro.params;
+const plugins = await getPlugins();
+const plugin = plugins.find(p => p.namespace === slug);
+
+if (!plugin) {
+  throw new AstroError(`Plugin not found: ${slug}`);
+}
+---
+
+<Layout>
+    <h1>{plugin.name}</h1>
+</Layout>

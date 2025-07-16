@@ -1,0 +1,35 @@
+---
+import { getPlugins } from "../components/in_plugins.js";
+
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+    <h1>Plugins</h1>
+
+    <!-- Right Part of the Website -->
+    <div>
+        <!-- return a list of all plugins -->
+        {
+            await getPlugins().then((plugins) => {
+                return plugins.map((plugin) => (
+                    <a href=`plugin/${plugin.namespace}`><div class="plugin-card">
+                        <p>{plugin.name}</p>
+                        <p>{plugin.description}</p>
+                        <p>{plugin.license}</p>
+                        <p>{plugin.author}</p>
+                    </div></a>
+                ));
+            })
+        }
+    </div>
+</Layout>
+
+<style>
+    .plugin-card {
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin: 10px 0;
+        border-radius: 5px;
+    }
+</style>

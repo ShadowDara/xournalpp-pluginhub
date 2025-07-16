@@ -1,0 +1,14 @@
+{
+  "name": "xournalpp-plugin-hub-webpage",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "node pull_data.js && astro dev",
+    "build": "node pull_data.js && astro build",
+    "preview": "node pull_data.js && astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^5.11.1"
+  }
+}
