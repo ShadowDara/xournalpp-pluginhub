@@ -1,4 +1,5 @@
 import os
+import sys
 import json
 from pathlib import Path
 from dataclasses import dataclass
@@ -58,6 +59,7 @@ class IndexFile:
 
 plugindatasafefile = "plugins.json"
 plugindatafolder = "plugin-registration"
+plugin_errors = []
 
 script_path = os.path.dirname(__file__)
 base_path = Path(__file__).parent.parent
@@ -99,3 +101,15 @@ sub files and althouth copy them!
 """
 for entry in regi_files:
     print(entry.main_link)
+
+
+# to end the program
+# check for skipped plugins before exiting
+if plugin_errors != []:
+    print("Some plugins were skipped:")
+    for error in plugin_errors:
+        print(f" - {error}")
+    sys.exit(1)
+
+# If everything went fine, exit with code 0
+sys.exit(0)
