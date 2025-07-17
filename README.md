@@ -3,6 +3,11 @@
 This is an Idea for the Plugin Hub Repository for Xournal++
 
 
+## How to Registrate a Pluigin?
+
+[Registrate a Pluigin](.github/Registration.md)
+
+
 ## TODO
 
 - [ ] Branch Protection rules for PRs
@@ -12,8 +17,13 @@ This is an Idea for the Plugin Hub Repository for Xournal++
 - [ ] make the client software to read the json
 - [ ] write an good instruction how to add a pluigin
 - [ ] make ISSUE Templates
+- [ ] explanation to registrate a Pluigin
+- [ ] more code documentation and Readme files
+
 
 **Anyone who want to help is welcome!**
+
+See here for more Infos: [github.com/xournalpp/xournalpp/issues/3839](https://github.com/xournalpp/xournalpp/issues/3839)
 
 
 <!-- ------------------------------------------ ---
@@ -54,60 +64,7 @@ with workflow or free hosting like nextjs idk
 
 -->
 
-
-## Directories
-
-```
-plugin-data-pull
--> a python script which collects the plugin data to make it faster readable
-   for a client software
-
-plugin-registration
--> to registrate new plugins
-
-plugins
--> to store code for xournalpp plugins
-```
-
-
-## Registration
-
-How to registrate a plugin?
-
-1. Your pluigin must have the files mentioned above
-
-2. open the `registration` folder
-
-3. create a new json file the name of your pluigin and paste this:
-
-[example_registration](example/registration.json)
-
-4. add the link
-
-
-## Plugin Structure
-
-Your plugin musst have a 
-```
-index.json
-```
-file in the root directory *(as well as the standard `plugin.ini` and lua files)*
-
-**The Content of this file looks like this:**
-
-[example_index](example/index.json)
-
-**namespace** MUSST be same as your json file in `registration`,
-else it does not work!
-
-You can of course add multiple **other versions** and multiple versions
-to **available_for**
-
-
 ---
-
-See here [github.com/xournalpp/xournalpp/issues/3839](https://github.com/xournalpp/xournalpp/issues/3839)
-
 
 ## License
 

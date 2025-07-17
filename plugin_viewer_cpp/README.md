@@ -1,4 +1,10 @@
-## CPP-Code
+# Xournalpp Pluigin Viewer
+
+### TODO
+- [ ] better UI
+- [ ] refactor UI Code
+
+### Docker
 
 to build the container
 ```sh
