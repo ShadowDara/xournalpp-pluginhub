@@ -5,10 +5,10 @@ This is an Idea for the Plugin Hub Repository for Xournal++
 
 ## How to Registrate a Pluigin?
 
-[Registrate a Pluigin](.github/Registration.md)
+[--> Registrate a Pluigin <--](.github/Registration.md)
 
 
-## TODO
+## Still TODO
 
 - [ ] Branch Protection rules for PRs
 - [ ] PR Templates
@@ -19,52 +19,14 @@ This is an Idea for the Plugin Hub Repository for Xournal++
 - [ ] make ISSUE Templates
 - [ ] explanation to registrate a Pluigin
 - [ ] more code documentation and Readme files
+- [ ] rename the Folders (shorter folder names)
+- [ ] make Readme in `example` folder
 
 
 **Anyone who want to help is welcome!**
 
 See here for more Infos: [github.com/xournalpp/xournalpp/issues/3839](https://github.com/xournalpp/xournalpp/issues/3839)
 
-
-<!-- ------------------------------------------ ---
-
-Other TODO
-
-- rename the Folders (shorter folder names)
-
----- ------------------------------------------ -->
-
-
-<!--
-
-Ascii banner
-https://manytools.org/hacker-tools/ascii-banner/
-
-'##::::'##::'######::'########:'##:::::::'########::'######:::'######::
- ##:::: ##:'##... ##: ##.....:: ##::::::: ##.....::'##... ##:'##... ##:
- ##:::: ##: ##:::..:: ##::::::: ##::::::: ##::::::: ##:::..:: ##:::..::
- ##:::: ##:. ######:: ######::: ##::::::: ######:::. ######::. ######::
- ##:::: ##::..... ##: ##...:::: ##::::::: ##...:::::..... ##::..... ##:
- ##:::: ##:'##::: ##: ##::::::: ##::::::: ##:::::::'##::: ##:'##::: ##:
-. #######::. ######:: ########: ########: ########:. ######::. ######::
-:.......::::......:::........::........::........:::......::::......:::
-'####:'########::'########::::'###:::::'######::                       
-. ##:: ##.... ##: ##.....::::'## ##:::'##... ##:                       
-: ##:: ##:::: ##: ##::::::::'##:. ##:: ##:::..::                       
-: ##:: ##:::: ##: ######:::'##:::. ##:. ######::                       
-: ##:: ##:::: ##: ##...:::: #########::..... ##:                       
-: ##:: ##:::: ##: ##::::::: ##.... ##:'##::: ##:                       
-'####: ########:: ########: ##:::: ##:. ######::                       
-....::........:::........::..:::::..:::......:::                       
-
-Add a statistics server which counts plugins etc
-- Count
-
-with workflow or free hosting like nextjs idk
-
--->
-
----
 
 ## License
 

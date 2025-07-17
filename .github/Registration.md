@@ -30,3 +30,5 @@ else it does not work!
 
 You can of course add multiple **other versions** and multiple versions
 to **available_for**
+
+**Need an example?** Click [here](../example)
