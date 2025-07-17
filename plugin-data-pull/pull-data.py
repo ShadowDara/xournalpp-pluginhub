@@ -59,7 +59,7 @@ class IndexFile:
 # *************************************************
 
 plugindatasafefile = "plugins.json"
-plugindatafolder = "plugin-registration"
+plugindatafolder = "registration"
 plugin_errors = []
 
 script_path = os.path.dirname(__file__)
@@ -101,7 +101,7 @@ def from_dict(data: dict) -> IndexFile:
 # *                                               *
 # *************************************************
 
-print("Starting to process plugin registration files...\n")
+print("Starting to process registration files...\n")
 
 """
 The Code will go through the file list in plugin registration,

@@ -2,7 +2,7 @@
     "name": "noname_plugin",
     "namespace": "noname",
     "author": "Shadowdara",
-    "description": "a useless plugin",
+    "description": "example file",
     "license": "MIT",
     "version": "1.0.1",
     "available_for": [
