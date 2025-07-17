@@ -5,5 +5,17 @@ Xournalpp Pluigin Viewer
 
 ### TODO
 - [ ] change the Header Layout for the pages
-- [ ] make [slug] pages for every pluigin
+- [X] make [slug] pages for every pluigin
 - [ ] make good UI
+
+
+### Docker Container
+build
+```sh
+docker build -t xournal_pluigin_webpage .
+```
+
+run
+```sh
+docker run -p 4321:4321 xournal_pluigin_webpage
+```

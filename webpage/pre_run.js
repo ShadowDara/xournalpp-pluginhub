@@ -25,7 +25,7 @@ writeFileSync('build/.nojekyll', '');
 
 // src/components/plugins.js erstellen
 let content = await readFileSync('../plugins.json', 'utf-8');
-writeFileSync('src/components/plugins.js', `// All registered plugins\n// This file is auto-generated, do not edit manually\n\nexport const plugin_data = ${content}\n`);
+writeFileSync('src/components/plugins.js', `// All registered plugins\n// This file is auto-generated from root/plugins.json,\ndo not edit manually\n\nexport const plugin_data = ${content}\n`);
 
 console.log("");
 

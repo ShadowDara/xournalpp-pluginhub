@@ -11,4 +11,8 @@ RUN npm install
 
 COPY . .
 
-CMD [ "npm", "start" ]
+ENV PORT=4321
+
+EXPOSE 4321
+
+CMD [ "npm", "run", "astro", "dev" ]
