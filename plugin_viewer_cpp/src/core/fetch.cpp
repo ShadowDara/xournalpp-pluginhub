@@ -1,6 +1,5 @@
 // fetch.cpp
-#include "fetch.hpp"
-#include <curl/curl.h>
+#include "../header/fetch.hpp"
 
 size_t WriteCallback(void* contents, size_t size, size_t nmemb, void* userp) {
     ((std::string*)userp)->append((char*)contents, size * nmemb);

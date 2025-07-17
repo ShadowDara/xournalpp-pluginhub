@@ -140,7 +140,7 @@ for entry in regi_files:
     response = requests.get(formatted_link + "/index.json")
 
     if response.status_code == 200:
-        print("Plugin is available, processing...")
+        print("Link is available, processing...")
     
     # Error 1
     else:
@@ -173,7 +173,7 @@ for entry in regi_files:
 
 # Save the plugin data to a JSON file
 with open(os.path.join(base_path, "plugins.json"), "w", encoding="UTF-8") as f:
-    json.dump(plugin_data_list, f, ensure_ascii=False, indent=4)
+    json.dump(plugin_data_list, f, ensure_ascii=False, separators=(',', ':'))
 
 # to end the program
 # check for skipped plugins before exiting

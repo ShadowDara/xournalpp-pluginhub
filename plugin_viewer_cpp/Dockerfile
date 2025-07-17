@@ -14,6 +14,7 @@ RUN dnf -y update && \
         libstdc++-devel \
         libcurl-devel \
         git \
+        nlohmann-json-devel \
         which && \
     dnf clean all
 

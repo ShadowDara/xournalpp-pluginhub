@@ -16,6 +16,15 @@ This is an Idea for the Plugin Hub Repository for Xournal++
 **Anyone who want to help is welcome!**
 
 
+<!-- ------------------------------------------ ---
+
+Other TODO
+
+- rename the Folders (shorter folder names)
+
+---- ------------------------------------------ -->
+
+
 <!--
 
 Ascii banner
