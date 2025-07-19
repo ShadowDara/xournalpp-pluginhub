@@ -58,7 +58,6 @@ class IndexFile:
 # *                                               *
 # *************************************************
 
-plugindatasafefile = "plugins.json"
 plugindatafolder = "registration"
 plugin_errors = []
 
@@ -172,7 +171,7 @@ for entry in regi_files:
     plugin_data_list.append(json_data)
 
 # Save the plugin data to a JSON file
-with open(os.path.join(base_path, "plugins.json"), "w", encoding="UTF-8") as f:
+with open(os.path.join(base_path, "data", "plugins.json"), "w", encoding="UTF-8") as f:
     json.dump(plugin_data_list, f, ensure_ascii=False, separators=(',', ':'))
 
 # to end the program

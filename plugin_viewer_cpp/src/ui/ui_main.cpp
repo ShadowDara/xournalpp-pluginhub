@@ -45,7 +45,7 @@ void on_activate(GtkApplication* app, gpointer user_data) {
     gtk_container_add(GTK_CONTAINER(scrolled), plugin_list); 
 
     // Data Fetching
-    std::string json = fetch_url("https://raw.githubusercontent.com/ShadowDara/xournalpp-plugin-hub-idea/refs/heads/main/plugins.json");
+    std::string json = fetch_url("https://raw.githubusercontent.com/ShadowDara/xournalpp-plugin-hub-idea/refs/heads/main/data/plugins.json");
 
     render_plugins_from_json(plugin_list, json);
 
