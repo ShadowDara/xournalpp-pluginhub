@@ -8,3 +8,6 @@ __pycache__
 # to be sure that a contributer can use macOS
 DS_Store
 *.DS_Store
+
+# Docker
+output/
