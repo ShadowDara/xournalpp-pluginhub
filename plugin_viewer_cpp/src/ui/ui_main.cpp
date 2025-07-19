@@ -30,10 +30,11 @@ void on_activate(GtkApplication* app, gpointer user_data) {
     GtkWidget *label = gtk_label_new("Willkommen zum Plugin-Manager!");
     gtk_box_pack_start(GTK_BOX(box), label, FALSE, FALSE, 0);
 
-    // Button hinzufügen
+    /* Button hinzufügen
     GtkWidget *button = gtk_button_new_with_label("Plugin hinzufügen");
     g_signal_connect(button, "clicked", G_CALLBACK(on_button_clicked), NULL);
     gtk_box_pack_start(GTK_BOX(box), button, FALSE, FALSE, 0);
+    */
 
     // Scrollbereich hinzufügen
     GtkWidget *scrolled = gtk_scrolled_window_new(NULL, NULL);
@@ -45,7 +46,7 @@ void on_activate(GtkApplication* app, gpointer user_data) {
     gtk_container_add(GTK_CONTAINER(scrolled), plugin_list); 
 
     // Data Fetching
-    std::string json = fetch_url("https://raw.githubusercontent.com/ShadowDara/xournalpp-plugin-hub-idea/refs/heads/main/data/plugins.json");
+    std::string json = fetch_url("https://raw.githubusercontent.com/ShadowDara/xournalpp-pluginhub/refs/heads/main/data/plugins.json");
 
     render_plugins_from_json(plugin_list, json);
 
