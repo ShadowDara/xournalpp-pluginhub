@@ -4,3 +4,7 @@ xournalpp-portable
 # Python
 __pycache__
 *.pyc
+
+# to be sure that a contributer can use macOS
+DS_Store
+*.DS_Store

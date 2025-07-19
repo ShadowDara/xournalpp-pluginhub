@@ -7,6 +7,7 @@ size_t WriteCallback(void* contents, size_t size, size_t nmemb, void* userp) {
 }
 
 std::string fetch_url(const std::string& url) {
+    std::cout << "*** Fetching Data ***" << std::endl;
     CURL* curl = curl_easy_init();
     std::string readBuffer;
     if (curl) {

@@ -2,6 +2,7 @@
 #ifndef FETCH_HPP
 #define FETCH_HPP
 
+#include <iostream>
 #include <string>
 #include <curl/curl.h>
 

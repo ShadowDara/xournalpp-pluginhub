@@ -21,6 +21,7 @@ This is an Idea for the Plugin Hub Repository for Xournal++
 - [ ] more code documentation and Readme files
 - [ ] rename the Folders (shorter folder names)
 - [ ] make Readme in `example` folder
+- [ ] look at the other `README` files
 
 
 **Anyone who want to help is welcome!**

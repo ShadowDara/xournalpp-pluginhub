@@ -8,7 +8,7 @@ void on_activate(GtkApplication* app, gpointer user_data) {
     // Fenster
     GtkWidget *window = gtk_application_window_new(app);
     gtk_window_set_title(GTK_WINDOW(window), "Xournal++ Plugin Manager");
-    gtk_window_set_default_size(GTK_WINDOW(window), 400, 200);
+    gtk_window_set_default_size(GTK_WINDOW(window), 500, 400);
     gtk_window_set_position(GTK_WINDOW(window), GTK_WIN_POS_CENTER);
 
     // Headerbar
@@ -31,15 +31,34 @@ void on_activate(GtkApplication* app, gpointer user_data) {
     g_signal_connect(button, "clicked", G_CALLBACK(on_button_clicked), NULL);
     gtk_box_pack_start(GTK_BOX(box), button, FALSE, FALSE, 0);
 
-    // Box for Plugins
-    GtkWidget* plugin1 = create_plugin_box(
-        "PDF Annotator",
-        "1.2.3",
-        "Max Mustermann",
-        "Erweitert Xournal++ mit PDF-Kommentarfunktionen."
-    );
 
-    gtk_box_pack_start(GTK_BOX(box), plugin1, FALSE, FALSE, 0);
+    // ============ Plugins hinzufügen
+
+    // ScrolledWindow erstellen
+    GtkWidget* scrolled_window = gtk_scrolled_window_new(NULL, NULL);
+    gtk_widget_set_vexpand(scrolled_window, TRUE); // Damit es vertikal wächst
+    gtk_scrolled_window_set_policy(GTK_SCROLLED_WINDOW(scrolled_window), GTK_POLICY_NEVER, GTK_POLICY_AUTOMATIC);
+
+    // Container für Plugin-Boxen (z. B. VBox)
+    GtkWidget* plugin_list = gtk_box_new(GTK_ORIENTATION_VERTICAL, 10);
+    gtk_container_set_border_width(GTK_CONTAINER(plugin_list), 10);
+
+    // Data Fetching
+    std::string json = fetch_url("https://raw.githubusercontent.com/ShadowDara/xournalpp-plugin-hub-idea/refs/heads/main/plugins.json");
+
+    // Plugin Boxen List
+    for (int i = 0; i < 8; ++i) {
+        gtk_box_pack_start(GTK_BOX(plugin_list), create_plugin_box("Plugin " + std::to_string(i + 1), "1.0", "Autor " + std::to_string(i + 1), "Beschreibung des Plugins " + std::to_string(i + 1)), FALSE, FALSE, 0);
+    }
+
+    // VBox in Scroll-Container einfügen
+    gtk_container_add(GTK_CONTAINER(scrolled_window), plugin_list);
+
+    // ScrolledWindow in das Haupt-Layout einfügen (z. B. in `box`)
+    gtk_box_pack_start(GTK_BOX(box), scrolled_window, TRUE, TRUE, 0);
+
+    // ============ Ende Plugins hinzufügen
+
 
     // CSS anwenden
     GtkCssProvider *provider = gtk_css_provider_new();

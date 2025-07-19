@@ -2,7 +2,7 @@
 
 ### TODO
 - [ ] better UI
-- [ ] refactor UI Code
+- [ ] refactor UI Code, it is very messy!
 
 ### Docker
 
