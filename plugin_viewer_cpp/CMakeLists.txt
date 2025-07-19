@@ -18,11 +18,13 @@ add_executable(app
     src/header/fetch.hpp
     src/header/parse.hpp
     src/header/ui_main.hpp
+    src/header/render_plugins.hpp
 
     src/core/fetch.cpp
     src/core/parse.cpp
 
     src/ui/ui_main.cpp
+    src/ui/render_plugins.cpp
 )
 
 # Include-Verzeichnisse

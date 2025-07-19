@@ -8,6 +8,7 @@
 
 #include "../header/fetch.hpp"
 #include "../header/parse.hpp"
+#include "../header/render_plugins.hpp"
 
 void on_button_clicked(GtkButton *button, gpointer user_data);
 void on_activate(GtkApplication* app, gpointer user_data);

@@ -10,6 +10,10 @@ void on_activate(GtkApplication* app, gpointer user_data) {
     gtk_window_set_title(GTK_WINDOW(window), "Xournal++ Plugin Manager");
     gtk_window_set_default_size(GTK_WINDOW(window), 500, 400);
     gtk_window_set_position(GTK_WINDOW(window), GTK_WIN_POS_CENTER);
+    
+    // Hauptbox erstellen (das EINZIGE direkte Kind des Fensters)
+    GtkWidget *main_box = gtk_box_new(GTK_ORIENTATION_VERTICAL, 5);
+    gtk_container_add(GTK_CONTAINER(window), main_box);
 
     // Headerbar
     GtkWidget *header = gtk_header_bar_new();
@@ -20,7 +24,7 @@ void on_activate(GtkApplication* app, gpointer user_data) {
     // Hauptlayout
     GtkWidget *box = gtk_box_new(GTK_ORIENTATION_VERTICAL, 10);
     gtk_container_set_border_width(GTK_CONTAINER(box), 15);
-    gtk_container_add(GTK_CONTAINER(window), box);
+    gtk_container_add(GTK_CONTAINER(main_box), box);
 
     // Label hinzufügen
     GtkWidget *label = gtk_label_new("Willkommen zum Plugin-Manager!");
@@ -31,34 +35,19 @@ void on_activate(GtkApplication* app, gpointer user_data) {
     g_signal_connect(button, "clicked", G_CALLBACK(on_button_clicked), NULL);
     gtk_box_pack_start(GTK_BOX(box), button, FALSE, FALSE, 0);
 
+    // Scrollbereich hinzufügen
+    GtkWidget *scrolled = gtk_scrolled_window_new(NULL, NULL);
+    gtk_widget_set_vexpand(scrolled, TRUE);
+    gtk_box_pack_start(GTK_BOX(main_box), scrolled, TRUE, TRUE, 0);
 
-    // ============ Plugins hinzufügen
-
-    // ScrolledWindow erstellen
-    GtkWidget* scrolled_window = gtk_scrolled_window_new(NULL, NULL);
-    gtk_widget_set_vexpand(scrolled_window, TRUE); // Damit es vertikal wächst
-    gtk_scrolled_window_set_policy(GTK_SCROLLED_WINDOW(scrolled_window), GTK_POLICY_NEVER, GTK_POLICY_AUTOMATIC);
-
-    // Container für Plugin-Boxen (z. B. VBox)
-    GtkWidget* plugin_list = gtk_box_new(GTK_ORIENTATION_VERTICAL, 10);
-    gtk_container_set_border_width(GTK_CONTAINER(plugin_list), 10);
+    // Die Box, in der die Plugins gelistet werden
+    GtkWidget *plugin_list = gtk_box_new(GTK_ORIENTATION_VERTICAL, 5);
+    gtk_container_add(GTK_CONTAINER(scrolled), plugin_list); 
 
     // Data Fetching
     std::string json = fetch_url("https://raw.githubusercontent.com/ShadowDara/xournalpp-plugin-hub-idea/refs/heads/main/plugins.json");
 
-    // Plugin Boxen List
-    for (int i = 0; i < 8; ++i) {
-        gtk_box_pack_start(GTK_BOX(plugin_list), create_plugin_box("Plugin " + std::to_string(i + 1), "1.0", "Autor " + std::to_string(i + 1), "Beschreibung des Plugins " + std::to_string(i + 1)), FALSE, FALSE, 0);
-    }
-
-    // VBox in Scroll-Container einfügen
-    gtk_container_add(GTK_CONTAINER(scrolled_window), plugin_list);
-
-    // ScrolledWindow in das Haupt-Layout einfügen (z. B. in `box`)
-    gtk_box_pack_start(GTK_BOX(box), scrolled_window, TRUE, TRUE, 0);
-
-    // ============ Ende Plugins hinzufügen
-
+    render_plugins_from_json(plugin_list, json);
 
     // CSS anwenden
     GtkCssProvider *provider = gtk_css_provider_new();
@@ -66,12 +55,13 @@ void on_activate(GtkApplication* app, gpointer user_data) {
         "* { font-size: 14pt; }"
         "window { background-color: #1e1e1e; }"
         "entry, button { font-size: 14pt; }"
-        "header/label { color: white; font-size: 14pt; }"
         "button { background: #ff4081; color: white; padding: 10px; border-radius: 10px; }"
         "entry { background: #2e2e2e; color: white; }",
-        -1, NULL);
-    gtk_style_context_add_provider_for_screen(gdk_screen_get_default(),
-        GTK_STYLE_PROVIDER(provider), GTK_STYLE_PROVIDER_PRIORITY_USER);
+        -1, NULL
+    );
+    // "header/label { color: white; font-size: 14pt; }"
+
+    gtk_style_context_add_provider_for_screen(gdk_screen_get_default(), GTK_STYLE_PROVIDER(provider), GTK_STYLE_PROVIDER_PRIORITY_USER);
 
     gtk_widget_show_all(window);
 }
