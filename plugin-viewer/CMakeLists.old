@@ -2,10 +2,15 @@ cmake_minimum_required(VERSION 3.10)
 project(gtk3_example)
 
 find_package(PkgConfig REQUIRED)
+
+# GTK3 suchen
 pkg_check_modules(GTK3 REQUIRED gtk+-3.0)
+
+# libcurl suchen
 find_package(CURL REQUIRED)
 find_package(nlohmann_json REQUIRED)
 
+# Executable und Quellcode-Dateien
 add_executable(app 
     src/main.cpp
 
@@ -22,17 +27,19 @@ add_executable(app
     src/ui/render_plugins.cpp
 )
 
-# Include & Definitions für GTK3 (da kein CMake-Target)
-target_include_directories(app PRIVATE ${GTK3_INCLUDE_DIRS})
-target_link_libraries(app PRIVATE ${GTK3_LIBRARIES})
-add_definitions(${GTK3_CFLAGS_OTHER})
+# Include-Verzeichnisse
+target_include_directories(app PRIVATE
+    ${GTK3_INCLUDE_DIRS}
+    ${CURL_INCLUDE_DIRS}
+    ${nlohmann_json_INCLUDE_DIRS}
+)
 
-# Moderne Targets für curl & json
+# Bibliotheken linken
 target_link_libraries(app PRIVATE
-    CURL::libcurl
-    nlohmann_json::nlohmann_json
+    ${GTK3_LIBRARIES}
+    ${CURL_LIBRARIES}
+    ${nlohmann_json_LIBRARIES}
 )
 
-install(TARGETS app
-    RUNTIME DESTINATION bin
-)
+# Zusätzliche GTK-Compiler-Flags
+add_definitions(${GTK3_CFLAGS_OTHER})
