@@ -1,5 +1,11 @@
 cmake_minimum_required(VERSION 3.10)
-project(gtk3_example)
+project(xournalpp_plugin_viewer)
+
+# Definiere Pfad zur CSS-Datei
+set(STYLE_PATH "${CMAKE_BINARY_DIR}/dist/share/style.css")
+
+# config.hpp aus Vorlage erzeugen (landet im Build-Verzeichnis)
+configure_file(src/header/config.hpp.in ../src/header/config.hpp)
 
 find_package(PkgConfig REQUIRED)
 pkg_check_modules(GTK3 REQUIRED gtk+-3.0)
@@ -22,17 +28,27 @@ add_executable(app
     src/ui/render_plugins.cpp
 )
 
-# Include & Definitions für GTK3 (da kein CMake-Target)
-target_include_directories(app PRIVATE ${GTK3_INCLUDE_DIRS})
+# Header aus Build-Verzeichnis einbinden (damit config.hpp gefunden wird)
+target_include_directories(app PRIVATE 
+    ${CMAKE_BINARY_DIR}         # <- enthält die generierte config.hpp
+    ${GTK3_INCLUDE_DIRS}
+)
+
+# GTK3 Flags
 target_link_libraries(app PRIVATE ${GTK3_LIBRARIES})
 add_definitions(${GTK3_CFLAGS_OTHER})
 
-# Moderne Targets für curl & json
+# curl & json (modern targets)
 target_link_libraries(app PRIVATE
     CURL::libcurl
     nlohmann_json::nlohmann_json
 )
 
+# App installieren
 install(TARGETS app
     RUNTIME DESTINATION bin
 )
+
+# CSS-Datei mitinstallieren
+install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/style.css
+        DESTINATION share)

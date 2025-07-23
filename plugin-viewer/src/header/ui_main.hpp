@@ -6,6 +6,7 @@
 #include <string>
 #include <gtk/gtk.h>
 
+#include "../header/config.hpp"
 #include "../header/fetch.hpp"
 #include "../header/parse.hpp"
 #include "../header/render_plugins.hpp"

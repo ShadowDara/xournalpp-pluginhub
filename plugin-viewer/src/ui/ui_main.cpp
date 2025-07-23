@@ -48,27 +48,31 @@ void on_activate(GtkApplication* app, gpointer user_data) {
     gtk_container_add(GTK_CONTAINER(scrolled), plugin_list); 
 
     // Data Fetching
-    std::string json = fetch_url("https://raw.githubusercontent.com/ShadowDara/xournalpp-pluginhub/refs/heads/main/data/plugins.json");
+    std::string json = fetch_url("https://raw.githubusercontent.com/ShadowDara/xournalpp-pluginhub/main/data/plugins.json");  // Fix: falscher Pfad (refs/heads)
 
     render_plugins_from_json(plugin_list, json);
 
     // CSS anwenden
-    GtkCssProvider *provider = gtk_css_provider_new();
-    gtk_css_provider_load_from_data(provider,
-        "* { font-size: 14pt; }"
-        "window { background-color: #1e1e1e; }"
-        "entry, button { font-size: 14pt; }"
-        "button { background: #ff4081; color: white; padding: 10px; border-radius: 10px; }"
-        "entry { background: #2e2e2e; color: white; }",
-        -1, NULL
-    );
-    // "header/label { color: white; font-size: 14pt; }"
+    GtkCssProvider* provider = gtk_css_provider_new();
+    GdkDisplay* display = gdk_display_get_default();
+    GdkScreen* screen = gdk_display_get_default_screen(display);
+    
+    GError* error = nullptr;
+    gtk_css_provider_load_from_path(provider, STYLE_PATH, &error);  // Fix: std::string → c_str()
 
-    gtk_style_context_add_provider_for_screen(gdk_screen_get_default(), GTK_STYLE_PROVIDER(provider), GTK_STYLE_PROVIDER_PRIORITY_USER);
+    if (error) {
+        g_warning("Error loading CSS: %s", error->message);
+        g_clear_error(&error);
+    }
+
+    gtk_style_context_add_provider_for_screen(
+        screen,
+        GTK_STYLE_PROVIDER(provider),
+        GTK_STYLE_PROVIDER_PRIORITY_USER
+    );
 
     gtk_widget_show_all(window);
 }
-
 
 // Create a plugin box with details
 GtkWidget* create_plugin_box(const std::string& name,

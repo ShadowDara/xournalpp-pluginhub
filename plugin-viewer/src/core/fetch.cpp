@@ -12,7 +12,8 @@ std::string fetch_url(const std::string& url) {
 
     CURL* curl = curl_easy_init();
 
-    /* Just for local dev !!!
+    /*
+     * Just for local dev !!!
      * Change to:
      *
      * curl_easy_setopt(curl, CURLOPT_CAINFO, "path/to/cacert.pem");
@@ -44,8 +45,10 @@ std::string fetch_url(const std::string& url) {
     CURLcode res = curl_easy_perform(curl);
 
     if (res != CURLE_OK) {
-        std::cerr << "[ERROR] curl_easy_perform() failed: "
-                  << curl_easy_strerror(res) << std::endl;
+        std::cerr
+            << "[ERROR] curl_easy_perform() failed: "
+            << curl_easy_strerror(res)
+        << std::endl;
         curl_easy_cleanup(curl);
         return "";
     }

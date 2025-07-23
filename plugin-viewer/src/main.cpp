@@ -10,6 +10,9 @@ int main(int argc, char **argv) {
         parse_json(json);
     }
 
+    // For Debug Information
+    //GTK_DEBUG=interactive ./app
+
     GtkApplication *app = gtk_application_new("org.example.gtk3", G_APPLICATION_DEFAULT_FLAGS);
 
     g_signal_connect(app, "activate", G_CALLBACK(on_activate), NULL);
@@ -17,5 +20,6 @@ int main(int argc, char **argv) {
     int status = g_application_run(G_APPLICATION(app), argc, argv);
 
     g_object_unref(app);
+
     return status;
 }

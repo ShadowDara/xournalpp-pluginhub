@@ -1,0 +1,4 @@
+// config.hpp.in
+#pragma once
+
+#define STYLE_PATH "@STYLE_PATH@"
