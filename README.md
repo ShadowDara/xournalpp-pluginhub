@@ -10,6 +10,8 @@ This is an Idea for the Plugin Hub Repository for Xournal++
 
 ## Still TODO
 
+- [ ] better organisation over all README Files
+- [ ] windows version opens a terminal on start
 - [ ] add a settings or about window to show the software and framework version
 - [ ] Branch Protection rules for PRs
 - [ ] PR Templates
