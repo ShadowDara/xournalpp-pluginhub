@@ -73,38 +73,3 @@ void on_activate(GtkApplication* app, gpointer user_data) {
 
     gtk_widget_show_all(window);
 }
-
-// Create a plugin box with details
-GtkWidget* create_plugin_box(const std::string& name,
-                             const std::string& version,
-                             const std::string& author,
-                             const std::string& description) {
-    // Äußerer Rahmen
-    GtkWidget* frame = gtk_frame_new(NULL);
-    gtk_frame_set_shadow_type(GTK_FRAME(frame), GTK_SHADOW_ETCHED_IN);
-
-    // Vertikaler Box-Container
-    GtkWidget* vbox = gtk_box_new(GTK_ORIENTATION_VERTICAL, 4);
-    gtk_container_set_border_width(GTK_CONTAINER(vbox), 8);
-    gtk_container_add(GTK_CONTAINER(frame), vbox);
-
-    // Titel (Plugin Name + Version)
-    std::string title = name + " (" + version + ")";
-    GtkWidget* title_label = gtk_label_new(title.c_str());
-    gtk_widget_set_halign(title_label, GTK_ALIGN_START);
-    gtk_box_pack_start(GTK_BOX(vbox), title_label, FALSE, FALSE, 0);
-
-    // Autor
-    std::string author_text = "Author: " + author;
-    GtkWidget* author_label = gtk_label_new(author_text.c_str());
-    gtk_widget_set_halign(author_label, GTK_ALIGN_START);
-    gtk_box_pack_start(GTK_BOX(vbox), author_label, FALSE, FALSE, 0);
-
-    // Beschreibung
-    GtkWidget* desc_label = gtk_label_new(description.c_str());
-    gtk_label_set_line_wrap(GTK_LABEL(desc_label), TRUE);
-    gtk_widget_set_halign(desc_label, GTK_ALIGN_START);
-    gtk_box_pack_start(GTK_BOX(vbox), desc_label, FALSE, FALSE, 0);
-
-    return frame;
-}
