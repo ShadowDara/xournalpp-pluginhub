@@ -10,6 +10,7 @@ This is an Idea for the Plugin Hub Repository for Xournal++
 
 ## Still TODO
 
+- [ ] add a settings or about window to show the software and framework version
 - [ ] Branch Protection rules for PRs
 - [ ] PR Templates
 - [ ] update and make the Readme
