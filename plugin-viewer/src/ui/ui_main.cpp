@@ -34,6 +34,8 @@ void on_activate(GtkApplication* app, gpointer user_data) {
     GtkWidget *button = gtk_button_new_with_label("Plugin hinzufügen");
     g_signal_connect(button, "clicked", G_CALLBACK(on_button_clicked), NULL);
     gtk_box_pack_start(GTK_BOX(box), button, FALSE, FALSE, 0);
+
+    g_signal_connect(app, "button-clicked", G_CALLBACK(on_button_clicked), NULL);
     */
 
     // Scrollbereich hinzufügen

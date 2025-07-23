@@ -1,8 +1,10 @@
 # Xournalpp Pluigin Viewer
 
 ### TODO
+- [ ] core/fetch.cpp, curl certifcat
 - [ ] better UI
 - [ ] refactor UI Code, it is very messy!
+- [ ] add Software Icon
 
 ### Docker
 

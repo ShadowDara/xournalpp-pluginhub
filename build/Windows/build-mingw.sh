@@ -56,13 +56,14 @@ done
 
 # Starting
 echo "[INFO] Starting the program"
-start $setup_dir/bin/$app_exe_name
+#start $setup_dir/bin/$app_exe_name
+$setup_dir/bin/$app_exe_name
 
 # ZIP archive
-echo "[INFO] Creating ZIP archive..."
-cd "$build_dir"
-zip_file="app-windows.zip"
-rm -f "$zip_file"
-"$SEVENZ" a -tzip "$zip_file" "$setup_dir_name"/* > /dev/null
+#echo "[INFO] Creating ZIP archive..."
+#cd "$build_dir"
+#zip_file="app-windows.zip"
+#rm -f "$zip_file"
+#"$SEVENZ" a -tzip "$zip_file" "$setup_dir_name"/* > /dev/null
 
-echo "[SUCCESS] Finished! Archive created at: $(realpath "$zip_file")"
+#echo "[SUCCESS] Finished! Archive created at: $(realpath "$zip_file")"

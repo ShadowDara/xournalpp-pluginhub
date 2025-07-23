@@ -4,7 +4,8 @@
 cd C:/Users/shado/Documents/GitHub/xournalpp-pluginhub/build/Windows
 -->
 
-to build the programm for windows
+to build the programm for windows, the programm will be executed
+at the end of the build script.
 
 Run in MinGW Terminal
 ```sh
@@ -17,4 +18,4 @@ export SEVENZ="/c/Program Files/7-Zip/7z.exe"
 ./build-mingw.sh
 ```
 
-Envirment Variable for 7zip needed!
+**Envirment Variable for 7zip needed!**

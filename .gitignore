@@ -11,3 +11,6 @@ DS_Store
 
 # Docker
 output/
+
+# Notepad++
+*.bak
