@@ -48,6 +48,7 @@ class IndexFile:
     description: str
     license: str
     version: str
+    link: str
     available_for: List[str]
     other_versions: Optional[List[OtherVersion]] = None
 
@@ -90,6 +91,7 @@ def from_dict(data: dict) -> IndexFile:
         description=data["description"],
         license=data["license"],
         version=data["version"],
+        link=data["link"],
         available_for=data["available_for"],
         other_versions=other_versions
     )
@@ -132,9 +134,9 @@ for entry in regi_files:
     Future Problem:
     an exeption is needed here, if the does not lead to github
     """
-    #print(entry.main_link)
+    print(entry.main_link)
     formatted_link = entry.main_link.replace("github.com", "raw.githubusercontent.com").replace("tree/", "refs/heads/")
-    #print(formatted_link)
+    print(formatted_link)
 
     response = requests.get(formatted_link + "/index.json")
 

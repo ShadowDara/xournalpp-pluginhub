@@ -5,6 +5,7 @@
     "description": "example file",
     "license": "MIT",
     "version": "1.0.1",
+    "link": "",
     "available_for": [
         "1.2.7"
     ],
