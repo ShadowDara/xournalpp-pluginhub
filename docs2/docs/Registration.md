@@ -1,4 +1,4 @@
-# Registration
+# Registrate
 
 How to registrate a plugin?
 

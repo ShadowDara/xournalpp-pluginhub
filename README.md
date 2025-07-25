@@ -5,7 +5,7 @@ This is an Idea for the Plugin Hub Repository for Xournal++
 
 ## How to Registrate a Pluigin?
 
-[--> Registrate a Pluigin <--](.github/Registration.md)
+[--> Registrate a Pluigin <--](docs2/docs/Registration.md)
 
 
 ## Still TODO
@@ -25,7 +25,7 @@ This is an Idea for the Plugin Hub Repository for Xournal++
 - [ ] rename the Folders (shorter folder names)
 - [ ] make Readme in `example` folder
 - [ ] look at the other `README` files
-- [TODO.md](.github/TODO.md)
+- [TODO.md](docs2/docs/TODO.md)
 
 **Anyone who want to help is welcome!**
 

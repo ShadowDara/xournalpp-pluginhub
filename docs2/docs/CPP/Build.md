@@ -1,4 +1,8 @@
-# Windows
+# Build
+
+---
+
+## Windows
 
 <!--
 cd C:/Users/shado/Documents/GitHub/xournalpp-pluginhub/build/Windows

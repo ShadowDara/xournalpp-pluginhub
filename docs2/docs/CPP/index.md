@@ -1,4 +1,4 @@
-# Xournalpp Pluigin Viewer
+# Pluigin Viewer
 
 ### TODO
 - [ ] core/fetch.cpp, curl certifcat
