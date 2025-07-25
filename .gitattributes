@@ -8,3 +8,5 @@
 
 webpage/*json linguist-ignore
 webpage/*json linguist-vendored
+
+docs2/** linguist-vendored=false
