@@ -25,7 +25,7 @@ This is an Idea for the Plugin Hub Repository for Xournal++
 - [ ] rename the Folders (shorter folder names)
 - [ ] make Readme in `example` folder
 - [ ] look at the other `README` files
-- [TODO.md](docs2/docs/TODO.md)
+- [ ] [TODO.md](docs2/docs/More/TODO.md)
 
 **Anyone who want to help is welcome!**
 
