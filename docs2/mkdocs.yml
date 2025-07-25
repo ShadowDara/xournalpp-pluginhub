@@ -1,1 +1,12 @@
 site_name: "Xournalpp Pluigin Viewer Docs"
+theme:
+  name: material
+  palette:
+    primary: 'indigo'
+    accent: 'pink'
+  font:
+    text: 'Roboto'
+    code: 'Roboto Mono'
+  features:
+    - navigation.tabs
+    - navigation.top
