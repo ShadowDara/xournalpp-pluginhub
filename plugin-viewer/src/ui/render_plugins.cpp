@@ -1,3 +1,5 @@
+// render_plugins.cpp
+
 #include "../header/render_plugins.hpp"
 
 void render_plugins_from_json(GtkWidget* container, const std::string& json_str) {

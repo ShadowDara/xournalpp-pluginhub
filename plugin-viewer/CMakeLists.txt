@@ -15,17 +15,22 @@ find_package(nlohmann_json REQUIRED)
 add_executable(app 
     src/main.cpp
 
-    src/header/main.hpp
+    # Header files
+    src/header/button_row.hpp
     src/header/fetch.hpp
+    src/header/main.hpp
     src/header/parse.hpp
-    src/header/ui_main.hpp
     src/header/render_plugins.hpp
+    src/header/ui_main.hpp
 
+    # Core Files
     src/core/fetch.cpp
     src/core/parse.cpp
 
-    src/ui/ui_main.cpp
+    # UI Files
+    src/ui/button_row.cpp
     src/ui/render_plugins.cpp
+    src/ui/ui_main.cpp
 )
 
 # Header aus Build-Verzeichnis einbinden (damit config.hpp gefunden wird)
