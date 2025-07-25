@@ -5,6 +5,7 @@
     "license": "MIT",
     "description": "a test for my xournalpp Plugin Hub",
     "version": "1.0.0",
+    "link": "https://github.com/ShadowDara/xournalpp-pluginhub/tree/main/plugins/test-plugin",
     "available_for": [
         "1.2.7",
         "1.2.6"
