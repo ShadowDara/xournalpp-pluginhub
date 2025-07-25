@@ -23,4 +23,16 @@ if (!plugin) {
 
 <Layout>
     <h1>{plugin.name}</h1>
+    <p>{plugin.description}</p>
+    <a href=`${plugin.link}`>Source</a>
+    <!-- Add Author, License idk, Docs when available -->
+
+    <!-- Maybe add the Readme here ??? -->
+    <hr>
+    <h3>More Versions</h3>
+    {plugin.other_versions.map((version) => (
+      <h4>{version.version}</h4>
+      <a href=`${version.link}`>Source</a>
+      // add available for here too
+    ))}
 </Layout>
