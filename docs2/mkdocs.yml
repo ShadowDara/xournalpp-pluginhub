@@ -1,4 +1,7 @@
 site_name: "Xournalpp Pluigin Viewer Docs"
+site_url: https://shadowdara.github.io/xournalpp-pluginhub/docs/
+use_directory_urls: true
+
 theme:
   name: material
   palette:
@@ -10,3 +13,6 @@ theme:
   features:
     - navigation.tabs
     - navigation.top
+
+extra:
+  base_url: /docs/

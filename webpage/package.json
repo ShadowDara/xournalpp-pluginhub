@@ -4,8 +4,8 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "node pre_run.js && astro dev",
-    "build": "node pre_run.js && astro build",
-    "preview": "node pre_run.js && astro preview",
+    "build": "node pre_run.js && node pre_build.js && astro build",
+    "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {

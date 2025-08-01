@@ -13,7 +13,7 @@ import Layout from "../layouts/Layout.astro";
         {
             await getPlugins().then((plugins) => {
                 return plugins.map((plugin) => (
-                    <a href=`plugin/${plugin.namespace}`><div class="plugin-card">
+                    <a href=`./plugin/${plugin.namespace}`><div class="plugin-card">
                         <p>{plugin.name}</p>
                         <p>{plugin.description}</p>
                         <p>{plugin.license}</p>

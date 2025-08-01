@@ -26,3 +26,7 @@ pnpm-debug.log*
 # auto generated files
 src/components/plugins.js
 build/
+
+# public folder
+public/docs
+!public/docs/info.txt
