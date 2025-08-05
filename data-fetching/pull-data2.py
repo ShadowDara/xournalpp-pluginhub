@@ -12,8 +12,11 @@ def main():
     pass
 
 if __name__ == "__main__":
+    print("\n******************************************************************\n")
+    print(" Checking Plugins")
+    print("\n******************************************************************\n")
+    
     plugindatafolder = "registration"
-    plugin_errors = []
     
     script_path = os.path.dirname(__file__)
     base_path = Path(__file__).parent.parent
@@ -28,8 +31,10 @@ if __name__ == "__main__":
 
     for file in all_files:
         error, data = checkpluigin.check_pluigin(file)
-        plugin_data_list.append(data)
-        plugin_error_list.append(error)
+        if data is not None:
+            plugin_data_list.append(data)
+        if error is not None:
+            plugin_error_list.append(error)
 
     # At the End:
     # Write plugin data in a JSON File and print errors in the console
@@ -40,10 +45,10 @@ if __name__ == "__main__":
         json.dump(plugin_data_list, f, ensure_ascii=False, separators=(',', ':'))
     
     # check for skipped plugins before exiting
-    if plugin_errors:
+    if plugin_error_list:
         print("\n******************************************************************\n")
         print("Some plugins were skipped:")
-        for error in plugin_errors:
+        for error in plugin_error_list:
             print(f" - {error}")
 
         print("\n******************************************************************\n")

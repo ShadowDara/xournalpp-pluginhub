@@ -84,7 +84,7 @@ def check_pluigin(file):
 
         # Now the json syntax of the index file is valid
 
-        filename = file.stem
+        filename = Path(file).stem
 
         # namespace must be the same as the name of the registration file
         if index_file.namespace != filename:
