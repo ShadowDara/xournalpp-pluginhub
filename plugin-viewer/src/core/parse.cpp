@@ -1,4 +1,5 @@
 // parse.cpp
+
 #include "../header/parse.hpp"
 
 // Parse JSON data and print plugin information

@@ -13,19 +13,14 @@ find_package(CURL REQUIRED)
 find_package(nlohmann_json REQUIRED)
 
 add_executable(app 
+    # Main File
     src/main.cpp
 
-    # Header files
-    src/header/button_row.hpp
-    src/header/fetch.hpp
-    src/header/main.hpp
-    src/header/parse.hpp
-    src/header/render_plugins.hpp
-    src/header/ui_main.hpp
-
     # Core Files
+    src/core/downloader.cpp
     src/core/fetch.cpp
     src/core/parse.cpp
+    src/core/unzip.cpp
 
     # UI Files
     src/ui/button_row.cpp

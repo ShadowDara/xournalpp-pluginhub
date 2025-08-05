@@ -58,3 +58,10 @@ You can of course add multiple **other versions** and multiple versions
 to **available_for**
 
 **Need an example?** Click [here](../example)
+
+Save this files then in a new Repository, must be in the ROOT of the repository!
+
+No subdirs!
+
+For another Versions, use other branches of the Repo or another repo, but the root of
+the repo and add them in the link

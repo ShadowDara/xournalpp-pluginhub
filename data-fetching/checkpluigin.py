@@ -44,6 +44,10 @@ def from_dict(data: dict) -> IndexFile:
         other_versions=other_versions
     )
 
+def check_subversion(entry):
+    # other versions durchgehen
+    return None
+
 # Input Argument is the file path of the file located in
 # registration/*.json
 def check_pluigin(file):
@@ -90,10 +94,17 @@ def check_pluigin(file):
         if index_file.namespace != filename:
             # Error 3
             return f"Plugin {entry.main_link} has no unique Namespace. / (3: Error code: no unique namespace!)", None
+        
+        if index_file.other_versions is not None:
+            for ventry in index_file.other_versions:
+                error = check_subversion(ventry)
+                if error is not None:
+                    return error
 
         # Things which still needs to be checked:
 
         # - the Repository must although contain some code files for the plugin
+        # - sub versions of the plugin still need to be checked (easy because of branches now!)
 
     # Error 2
     except Exception as e:

@@ -13,6 +13,8 @@ std::string fetch_url(const std::string& url) {
     CURL* curl = curl_easy_init();
 
     /*
+     * IMPORTANT
+     *
      * Just for local dev !!!
      * Change to:
      *
@@ -22,6 +24,7 @@ std::string fetch_url(const std::string& url) {
      *
      * https://curl.se/docs/caextract.html
      */
+
     curl_easy_setopt(curl, CURLOPT_SSL_VERIFYPEER, 0L);
     curl_easy_setopt(curl, CURLOPT_SSL_VERIFYHOST, 0L);
 
