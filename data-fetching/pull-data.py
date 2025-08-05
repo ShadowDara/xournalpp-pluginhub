@@ -178,7 +178,7 @@ with open(os.path.join(base_path, "data", "plugins.json"), "w", encoding="UTF-8"
 
 # to end the program
 # check for skipped plugins before exiting
-if plugin_errors != []:
+if plugin_errors:
     print("\n******************************************************************\n")
     print("Some plugins were skipped:")
     for error in plugin_errors:
