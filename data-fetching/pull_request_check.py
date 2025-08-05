@@ -1,7 +1,11 @@
 import os
 import sys
-import json
 import requests
+from pathlib import Path
+import fnmatch
+
+import helper
+import checkpluigin
 
 def get_files_in_pr(repo, pr_number):
     headers = {
@@ -18,6 +22,20 @@ def get_files_in_pr(repo, pr_number):
     new_files = [f['filename'] for f in files if f['status'] == 'added']
     modified_files = [f['filename'] for f in files if f['status'] == 'modified']
     return new_files, modified_files
+
+def checkfiles(new_files):    
+    # Filter for only file in the registration Folder
+    filtered_files = [f for f in new_files if fnmatch.fnmatch(str(f), '*/registration/*.json')]
+    
+    # Check every new File
+    for file in filtered_files:
+        print(file)
+        error, _ = checkpluigin.check_pluigin(file)
+        if error is not None:
+            print(error)
+            sys.exit(1)
+        else:
+            sys.exit(0)
 
 if __name__ == "__main__":
     repo = os.getenv('GITHUB_REPOSITORY')
@@ -36,8 +54,9 @@ if __name__ == "__main__":
         print("No new or modified files found.")
         sys.exit(0)
     else:
-        # Check if the files are located in registration/
+        # Check for new files located in registration/*.json
+        checkfiles(new_files)
         
-        # Check the namespace in index.json for the plugin
-        # namespaces MUST be atomic!
+        # If everything works the program will not reach this line and exit
+        # before with Code 0
         sys.exit(1)

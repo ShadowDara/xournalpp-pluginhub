@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.10)
 project(xournalpp_plugin_viewer)
 
 # Definiere Pfad zur CSS-Datei
-set(STYLE_PATH "${CMAKE_BINARY_DIR}/dist/share/style.css")
+set(STYLE_PATH "${CMAKE_BINARY_DIR}/dist/share/xournalpp-pluginviewer/style.css")
 
 # config.hpp aus Vorlage erzeugen (landet im Build-Verzeichnis)
 configure_file(src/header/config.hpp.in ../src/header/config.hpp)
@@ -55,5 +55,5 @@ install(TARGETS app
 )
 
 # CSS-Datei mitinstallieren
-install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/style.css
-        DESTINATION share)
+install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/src/ui/style.css
+        DESTINATION share/xournalpp-pluginviewer)
